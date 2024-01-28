@@ -20,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build ikt206g24v-02/ClassLibraryProject
+      run: dotnet build
       
   test:
     runs-on: ubuntu-latest
