@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: check dir
-      run: |
-        pwd
-        ls -al
+      run: pwd
+    - name: listdir
+      run: ls -al
     - uses: actions/checkout@v4
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
