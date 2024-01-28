@@ -11,22 +11,14 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-    - name: check dir
-      run: pwd
-    - name: listdir
-      run: ls -al
-    - name: check dir 2
-      run: cd ..
-    - name: listdir 2
-      run: ls -al 
     - uses: actions/checkout@v4
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.101
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ClassLibraryProject
     - name: Build
-      run: dotnet build
+      run: dotnet build ClassLibraryProject
     - name: Test
       run: dotnet test ClassLibraryProject/StringLibraryTest/StringLibraryTest.csproj
