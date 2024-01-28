@@ -16,6 +16,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.101
+    - name: small change
+      run: pwd
     - name: Restore dependencies
       run: dotnet restore ClassLibraryProject
     - name: Build
