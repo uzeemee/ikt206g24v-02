@@ -15,7 +15,7 @@ jobs:
     - name: Changing directory
       run: cd ~
     - name: Check directory
-      run: echo pwd
+      run: pwd
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
