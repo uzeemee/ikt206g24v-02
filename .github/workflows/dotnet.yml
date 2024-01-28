@@ -12,11 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Changing directory
-      run: cd ~
-    - name: Check directory
-      run: pwd
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
@@ -24,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build ClassLibraryProject/ClassLibraryProject.csproj
+      run: dotnet build
       
   test:
     runs-on: ubuntu-latest
