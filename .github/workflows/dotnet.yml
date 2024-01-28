@@ -16,15 +16,13 @@ jobs:
       run: cd ~
     - name: Check directory
       run: pwd
-    - name: List directory
-      run: ls
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.101
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ClassLibraryProject/ClassLibraryProject.csproj
     - name: Build
       run: dotnet build ClassLibraryProject/ClassLibraryProject.csproj
       
@@ -35,6 +33,6 @@ jobs:
     - name: Changing directory
       run: cd ~
     - name: Check directory
-      run: echo pwd
+      run: pwd
     - name: Test
-      run: dotnet test StringLibraryTest/StringLibraryTest.csproj
+      run: dotnet test ClassLibraryProject/StringLibraryTest/StringLibraryTest.csproj
